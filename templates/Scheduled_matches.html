@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User to Vision11</title>
+    <link rel="stylesheet" href="{% static 'css/matches.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/web/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="multicolorbg">
+        <div class="box">
+            <div class="head">
+                <div style="font-weight: bold; width: 33.33%;" class="player_data active" id="completed_match"><a
+                        onclick="show_completed()">Completed</a></div>
+                <div style="font-weight: bold; width: 33.33%;" class="player_data" id="live_match"><a
+                        onclick="show_live()">Live Match</a></div>
+                <div style="font-weight: bold; width: 33.33%;" class="player_data" id="Upcoming"><a
+                        onclick="show_upcoming()">Upcoming</a></div>
+            </div>
+            <div id="completed" style="height: 70vh;overflow-y: auto;">
+            </div>
+
+            <div id="live" style="display: none;height: 70vh;overflow-y: auto;">
+            
+            </div>
+
+            <div id="upcoming" style="display: none;height: 70vh;overflow-y: auto;">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="{% static 'js/match_scheduled.js' %}"></script>
+</html>

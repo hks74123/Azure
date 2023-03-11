@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.multicolorbg {
+    background: crimson;
+    background-image: linear-gradient(120deg, #000 55%, crimson 55%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#allcontest,#completed,#winings,#live{
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.multicolorbg .box{
+  width: 600px;
+  margin: auto;
+  margin-top: 115px;
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.contest{
+    margin: auto;
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    border: 1px solid #dddddd;
+    position: relative;
+}
+
+.mathc_name{
+    text-align: center;
+}
+
+.entr, .entryfe{
+    position: absolute;
+}
+
+.entr{
+    right: 20px;
+}
+
+.entryfe{
+    margin-top: 2px;
+    text-align: center;
+    display: inline-block;
+    right: 3px;
+    width: 30%;
+    background: lightgreen;
+    padding: 2px;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prize{
+    margin-top: 2px;
+}
+
+.progress_bar{
+    margin-top: 10px;
+}
+
+.prog_bar{
+    width: 100%;
+}
+
+.total_spot{
+    position: absolute;
+    right: 15px;
+}
+
+.join{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.join a{
+    color: #fff;
+    background: #0A2558;
+    padding: 4px 12px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.maincont{
+    margin-top: 10px;
+}
+
+.user_wined{
+    display: none;
+}
+
+select#user_team{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    margin-top: 3px;
+}
+
+.completed, .live{
+    display: none;
+}
+
+
+/*----------------------------*/
+
+
+.help-tip{
+    /* position: absolute;
+    top: 18px;
+    right: 18px; */
+    display: inline-block;
+    text-align: center;
+    background: cadetblue;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.help-tip p{    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+
+@media(max-width:620px) {
+    .multicolorbg .box{
+        width: 98%;
+    }
+}

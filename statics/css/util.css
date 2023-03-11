@@ -1,0 +1,20 @@
+.p-l-55 {padding-left: 55px;}
+.p-t-65 {padding-top: 65px;}
+.p-r-55 {padding-right: 55px;}
+.p-b-54 {padding-bottom: 54px;}
+.m-b-23 {margin-bottom: 23px;}
+.p-t-8 {padding-top: 8px;}
+.p-b-15 {padding-bottom: 15px;}
+.p-t-15 {padding-top: 15px;}
+.p-t-54 {padding-top: 54px;}
+.p-b-20 {padding-bottom: 20px;}
+.flex-c-m {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}

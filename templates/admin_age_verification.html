@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification Admin access page | Vision11.com</title>
+</head>
+<body>
+    {% for user in data %}
+        <h1>username: {{user.username}}</h1>
+        <p>age: {{user.age}}</p>
+        <img src="/static/imgs/{{user.aadhar_image}}">
+        <div class="btnscontainer">
+            <a href="/accept_request/pid={{user.id}}">Accept Request</a>
+            <a href="/deny_request/pid={{user.id}}">Deny Request</a>
+        </div>
+    {% endfor %}
+    {% if not len %}
+        <h1>There are no pending request for approval</h1>
+    {% endif %}
+</body>
+</html>

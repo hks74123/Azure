@@ -1,0 +1,135 @@
+{% load static %}
+{% load custom_index %}
+{% load custom_index_captain %}
+{% load custom_index_vice_captain %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>({{points}}) points for Team of {{user}}</title>
+    <link rel="stylesheet" href="{% static 'css/userteam.css' %}">
+</head>
+<body>
+    <div class="parentdiv">
+        <div class="child1">
+            <div class="child2">
+                <h5>wicketkeeper {% if show %}<a id="reurl" style="color: black;font-size: 14px;" href="#">Update Team?</a>{% endif %}</h5>
+                <div class="wicketkeeper">
+                    {% for player in data %}
+                    {%if player.player_type == "WICKET KEEPER" %}
+                    <div class="player">
+                        <img src="{{player.player_pic}}">
+                        <h5>
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                            {{player.player_name}}
+                        </h5>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <h5>Batsman</h5>
+                <div class="batsman">
+                    {% for player in data %}
+                    {%if player.player_type == "BATSMEN" %}
+                    <div class="player">
+                        <img src="{{player.player_pic}}">
+                        <h5>
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                            {{player.player_name}}
+                        </h5>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <h5>All rounder</h5>
+                <div class="allrounder">
+                    {% for player in data %}
+                    {%if player.player_type == "ALL ROUNDER" %}
+                    <div class="player">
+                        <img src="{{player.player_pic}}">
+                        <h5>
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                            {{player.player_name}}
+                        </h5>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <h5>Bowler</h5>
+                <div class="bowler">
+                    {% for player in data %}
+                    {%if player.player_type == "BOWLER" %}
+                    <div class="player">
+                        <img src="{{player.player_pic}}">
+                        <h5>
+                            {% if captain.pid == player.pid %}
+                            (C)
+                            {% elif vice_captain.pid == player.pid %}
+                            (VC)
+                            {% endif %}
+                            {{player.player_name}}
+                        </h5>
+                        <p>
+                            {% if captain.pid == player.pid %}
+                                {{ playersdata|custom_index_captain:player.pid }}
+                            {% elif vice_captain.pid == player.pid %}
+                                {{ playersdata|custom_index_vice_captain:player.pid }}
+                            {% else %}
+                                {{ playersdata|custom_index:player.pid }}
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('reurl').addEventListener('click',function(){
+        document.getElementById('reurl').href = document.URL.replace('userteam','updateteam');
+    })
+</script>
+</html>
